@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="Model.Ingredient" table="ingredients" catalog="brewery">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="100" not-null="true"  />
+        </property>
+        <property name="category" type="string">
+            <column name="category" length="100" not-null="true"  />
+        </property>
+        <property name="amount" type="int">
+            <column name="amount" length="11" not-null="true"  />
+        </property>
+        <property name="pricePerKilo" type="int">
+            <column name="pricePerKilo" length="11" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

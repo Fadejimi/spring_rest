@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- This stays empty for now -->
+
+    <import resource="classpath:spring/database/DataSource.xml"/>
+    <!--<import resource="db-config.xml"/>-->
+    <import resource="classpath:spring/database/hibernate.xml"/>
+    <import resource="spring-security.xml" />
+    
+    <import resource="classpath:spring/beans/user.xml" />
+    <import resource="classpath:spring/beans/ingredient.xml" />
+
+
+</beans>

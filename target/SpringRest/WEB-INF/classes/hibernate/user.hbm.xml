@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="Model.User" table="users" catalog="brewery">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="username" type="string">
+            <column name="username" length="100" not-null="true" unique="true"  />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="50" not-null="true"  />
+        </property>
+        <property name="beerKind" type="string">
+            <column name="beerkind" length="50" not-null="true"  />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="50" not-null="true" />
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="1" not-null="true" />
+        </property>
+        <property name="interests" type="string">
+            <column name="interests" not-null="true" />
+        </property>
+        <set name="userRole" table="user_role"
+             inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="username" not-null="true" />
+            </key>
+            <one-to-many class="Model.UserRole" />
+        </set>
+    </class>
+</hibernate-mapping>
